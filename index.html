@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva gramática del japonés | 日本語文法の新体系</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a5f7a;
+      --primary-light: #2980b9;
+      --primary-dark: #145374;
+      --accent: #e74c3c;
+      --accent-light: #ff6b6b;
+      --neutral-bg: #f8f9fa;
+      --verb-color: #27ae60;
+      --adj-color: #8e44ad;
+      --noun-color: #f39c12;
+      --func-color: #3498db;
+      --text: #2c3e50;
+      --text-light: #5d6d7e;
+      --border: #dfe6e9;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', 'Noto Sans JP', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #f0f2f5;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+      color: white;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    header .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .header-desc {
+      font-size: 1rem;
+      opacity: 0.85;
+      max-width: 700px;
+    }
+
+    /* Navigation */
+    nav {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    nav h2 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .nav-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      background: var(--neutral-bg);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .nav-item:hover {
+      background: #e8f4f8;
+      border-left-color: var(--primary);
+    }
+
+    .nav-item .num {
+      font-weight: 700;
+      color: var(--primary);
+      margin-right: 0.5rem;
+    }
+
+    /* Main content */
+    main {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: var(--card-shadow);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2 .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: var(--text);
+      margin: 2rem 0 1rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--primary-light);
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Principle box */
+    .principle-box {
+      background: linear-gradient(135deg, #e8f4f8 0%, #d4edda 100%);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid var(--primary);
+    }
+
+    .principle-box h3 {
+      margin: 0 0 1rem 0;
+      padding: 0;
+      border: none;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .principle-box ul {
+      margin: 0;
+      padding-left: 1.75rem;
+    }
+
+    .principle-box li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contrast box - for showing what we reject */
+    .contrast-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .contrast-reject {
+      background: #ffebee;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      border: 2px solid #ef9a9a;
+    }
+
+    .contrast-accept {
+      background: #e8f5e9;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      border: 2px solid #a5d6a7;
+    }
+
+    .contrast-reject h4, .contrast-accept h4 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+    }
+
+    .contrast-reject h4 {
+      color: #c62828;
+    }
+
+    .contrast-accept h4 {
+      color: #2e7d32;
+    }
+
+    .contrast-reject h4::before {
+      content: '✗ ';
+    }
+
+    .contrast-accept h4::before {
+      content: '✓ ';
+    }
+
+    .contrast-reject ul, .contrast-accept ul {
+      margin: 0;
+      padding-left: 1.75rem;
+    }
+
+    /* Structure diagram */
+    .structure-diagram {
+      background: var(--neutral-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .structure-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .structure-item {
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+    }
+
+    .structure-item.optional {
+      border: 2px dashed var(--border);
+      background: white;
+    }
+
+    .structure-item.required {
+      background: var(--primary);
+      color: white;
+    }
+
+    .structure-item.core {
+      background: var(--verb-color);
+      color: white;
+    }
+
+    .structure-item.func {
+      background: var(--func-color);
+      color: white;
+    }
+
+    .structure-item.final {
+      background: var(--accent);
+      color: white;
+    }
+
+    .structure-arrow {
+      color: var(--text-light);
+      font-size: 1.5rem;
+    }
+
+    .structure-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+    }
+
+    /* Term definition */
+    .term-def {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .term-def .term-name {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .term-def .term-name .jp {
+      font-weight: 500;
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-left: 0.5rem;
+    }
+
+    .term-def .term-desc {
+      margin-bottom: 0.5rem;
+    }
+
+    .term-def ul {
+      margin: 0;
+      padding-left: 1.75rem;
+    }
+
+    /* Example sentence */
+    .example {
+      background: #fafafa;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-left: 4px solid var(--primary-light);
+    }
+
+    .example .jp {
+      font-size: 1.2rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .example .gloss {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .example .analysis {
+      font-size: 0.9rem;
+      color: var(--func-color);
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    /* Highlight spans */
+    .hl-core {
+      background: #c8e6c9;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+    }
+
+    .hl-func {
+      background: #bbdefb;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+    }
+
+    .hl-final {
+      background: #ffcdd2;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+    }
+
+    .hl-topic {
+      background: #fff9c4;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+    }
+
+    /* Category grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      border: 2px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow);
+    }
+
+    .category-card.verb {
+      border-color: var(--verb-color);
+    }
+
+    .category-card.adj {
+      border-color: var(--adj-color);
+    }
+
+    .category-card.noun {
+      border-color: var(--noun-color);
+    }
+
+    .category-card .card-label {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+
+    .category-card.verb .card-label { background: var(--verb-color); }
+    .category-card.adj .card-label { background: var(--adj-color); }
+    .category-card.noun .card-label { background: var(--noun-color); }
+
+    .category-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .category-card ul {
+      margin: 0;
+      padding-left: 1.75rem;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: var(--primary);
+      color: white;
+    }
+
+    th {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--neutral-bg);
+    }
+
+    /* Note */
+    .note {
+      background: #e3f2fd;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .note::before {
+      content: '💡';
+      font-size: 1.2rem;
+    }
+
+    .note.important {
+      background: #fff3e0;
+    }
+
+    .note.important::before {
+      content: '⚠️';
+    }
+
+    /* Collapsible */
+    .collapsible {
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+    }
+
+    .collapsible-header {
+      padding: 1rem 1.25rem;
+      background: var(--neutral-bg);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+
+    .collapsible-header:hover {
+      background: #e8f4f8;
+    }
+
+    .collapsible-header::after {
+      content: '▼';
+      font-size: 0.8rem;
+      transition: transform 0.3s;
+    }
+
+    .collapsible.open .collapsible-header::after {
+      transform: rotate(180deg);
+    }
+
+    .collapsible.open .collapsible-header {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .collapsible-content {
+      display: none;
+      padding: 1.25rem;
+      background: white;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .collapsible.open .collapsible-content {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-light);
+    }
+
+    /* Spanish gloss in tables */
+    .gloss-table {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-style: italic;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--border);
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .contrast-box {
+        grid-template-columns: 1fr;
+      }
+
+      .structure-flow {
+        flex-direction: column;
+      }
+
+      .structure-arrow {
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Nueva gramática del japonés</h1>
+      <p class="subtitle">日本語文法の新体系</p>
+      <p class="header-desc">Un proyecto que pretende describir la lengua japonesa desde su propia lógica interna, rompiendo con los marcos impuestos por la lingüística occidental. Plantea una gramática centrada en el predicado, en la que categorías tradicionales como "sujeto", "verbo auxiliar" y "partícula final" dejan de ser fundamentales.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav>
+      <h2>Índice</h2>
+      <div class="nav-grid">
+        <a href="#principle" class="nav-item"><span class="num">1</span> Principios básicos</a>
+        <a href="#sentence" class="nav-item"><span class="num">2</span> Estructura de la oración</a>
+        <a href="#predicate" class="nav-item"><span class="num">3</span> Composición del predicado</a>
+        <a href="#core" class="nav-item"><span class="num">4</span> Núcleo del predicado</a>
+        <a href="#functional" class="nav-item"><span class="num">5</span> Expresiones funcionales</a>
+        <a href="#modification" class="nav-item"><span class="num">6</span> Las 8 formas del núcleo del predicado</a>
+        <a href="#modification" class="nav-item"><span class="num">7</span> Modificación nominal</a>
+        <a href="#noda" class="nav-item"><span class="num">8</span> Oraciones con のだ</a>
+        <a href="#final" class="nav-item"><span class="num">9</span> Expresiones finales</a>
+        <a href="#complement" class="nav-item"><span class="num">10</span> Complementos y posposiciones</a>
+        <a href="#summary" class="nav-item"><span class="num">∞</span> Resumen del sistema</a>
+     </div>
+    </nav>
+
+    <main>
+      <!-- 1. Principios básicos -->
+      <section id="principle">
+        <h2><span class="section-num">1</span> Principios básicos</h2>
+
+        <div class="principle-box">
+          <h3>Punto de partida de este sistema gramatical</h3>
+          <ul>
+            <li><strong>El predicado es el elemento esencial de la oración.</strong> Los complementos (tradicionalmente llamados "sujeto", "objeto directo", "complemento") son omisibles, pero el predicado no puede omitirse.</li>
+            <li><strong>No se adopta el concepto de "sujeto".</strong> En japonés no existe la concordancia sujeto-verbo como en las lenguas occidentales.</li>
+            <li><strong>La modificación nominal se realiza anteponiendo directamente una oración al nominal.</strong> No se requieren elementos de conexión como los pronombres relativos.</li>
+            <li><strong>La negación se expresa mediante el adjetivo ない (nai).</strong> La oración negativa se forma posponiendo ない al núcleo del predicado.</li>
+            <li><strong>El predicado se compone de un "núcleo predicativo" y "expresiones funcionales".</strong></li>
+            <li><strong>Además, adverbios, frases adverbiales y conjunciones pueden formar parte de la estructura oracional.</strong></li>
+          </ul>
+        </div>
+
+        <h3>Ruptura con la gramática tradicional</h3>
+
+        <div class="contrast-box">
+          <div class="contrast-reject">
+            <h4>Conceptos que no adoptamos</h4>
+            <ul>
+              <li>Sujeto (主語 shugo)</li>
+              <li>Verbo auxiliar (助動詞 jodōshi)</li>
+              <li>Partícula final (終助詞 shūjoshi)</li>
+              <li>Adjetivo verbal (形容動詞 keiyōdōshi)</li>
+              <li>Verbo godan (五段動詞 godan dōshi)</li>
+              <li>ichidan (一段動詞 ichidan dōshi)</li>
+            </ul>
+          </div>
+          <div class="contrast-accept">
+            <h4>Conceptos que adoptamos</h4>
+            <ul>
+              <li>Tópico (話題主 wadaishu)</li>
+              <li>Predicado (述部 jutsubu)</li>
+              <li>Núcleo del predicado (述部核 jutsubu kaku)</li>
+              <li>Expresiones funcionales predicativas (述部機能表現 jutsubu kinō hyōgen)</li>
+              <li>Expresiones finales de oración (文末表現 bunmatsu hyogen)</li>
+              <li>Nominal adjetival (形容名詞 keiyōmeishi)</li>
+              <li>Verbo V-u (V-u動詞 V-u doshi)</li>
+              <li>Verbo-ru V-ru (V-ru動詞 V-ru dōshi)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note important">
+          <div><p>¿Por qué no usamos la palabra "sujeto"?: En japonés, en oraciones como 私は寿司が好きだ(watashi wa sushi ga suki da - "me gusta el sushi", lit. "el sushi es [para mí] gustoso."), tanto el agente (私 watashi) como el objeto del sentimento "gustoso" (寿司 sushi) aparecen con elementos de tipo "sujeto" aunque en el concepto de oración, no pueden existir dos sujetos diferentes en una oración. 
+
+          <p>Además, la forma del verbo no cambia según quién realiza la acción. Aplicar el concepto occidental de "sujeto" al japonés oscurece la esencia del idioma. 
+          
+          <p>En esta oración, por ejemplo, 私はes el nominal seleccionado como el tópico y 寿司が es el nonimal a que se refiere el predicado 好きだ. 好きだdescribe el sentimento que existe entre yo y el sushi. Ni 私はni 寿司がfunciona como el sujeto del predicado 好きだ.</div>
+        </div>
+      </section>
+
+      <!-- 2. Estructura de la oración -->
+      <section id="sentence">
+        <h2><span class="section-num">2</span> Estructura de la oración</h2>
+
+        <p>La oración japonesa tiene una estructura donde <strong>el predicado es el elemento esencial</strong>, y uno o varios <strong>complementos</strong> se colocan delante de él. Al final de la oración puede añadirse una <strong>expresión final</strong> que indica la intención comunicativa del hablante. Además, <strong>adverbios, frases adverbiales</strong> y <strong>conjunciones</strong> pueden formar parte de la composición oracional.</p>
+
+        <div class="structure-diagram">
+          <div class="structure-flow">
+            <span class="structure-item optional">(Tópico)</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item optional">(Complemento)</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item required">Predicado</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item final">(Expresión final)</span>
+          </div>
+          <span class="structure-label">Los elementos entre ( ) son omisibles. Solo el predicado es obligatorio.</span>
+        </div>
+
+        <div class="example">
+          <span class="jp"><span class="hl-topic">田中さんは</span> <span class="hl-core">来る</span><span class="hl-final">よ</span>。</span>
+          <span class="gloss">Tanaka-san viene. (Te lo digo.)</span>
+          <span class="analysis">Tópico田中さんは+ Núcleo del predicado来る+ Expresión finalよ</span>
+        </div>
+
+        <div class="example">
+          <span class="jp"><span class="hl-core">雨だ</span>。</span>
+          <span class="gloss">Llueve. / Es lluvia.</span>
+          <span class="analysis">Solo el núcleo del predicado雨だ. Tópico y complemento omitidos.</span>
+        </div>
+
+        <div class="example">
+          <span class="jp"><span class="hl-topic">私は</span> <span class="hl-func">寿司が</span> <span class="hl-core">好きだ</span>。</span>
+          <span class="gloss">Me gusta el sushi.</span>
+          <span class="analysis">Tópico私は+ Complemento (nominativo)寿司が+ Núcleo del predicado好きだ</span>
+        </div>
+
+        <h3>No "sujeto", sino "tópico"</h3>
+
+        <p>El elemento marcado con la posposición <strong>は (wa)</strong> es frecuentemente el <strong>tópico</strong> (wadaishu). Esto indica "de qué se está hablando ahora" y es diferente del "sujeto" de las lenguas occidentales. Cuando la conversación continúa sobre el mismo tema, a menudo no se repite este tópico.</p>
+
+        <div class="example">
+          <span class="jp"><span class="hl-topic">象は</span> 鼻が 長い。そして耳が大きい。</span>
+          <span class="gloss">El elefante tiene la nariz larga. Y tiene las orejas grandes. (lit. En cuanto al elefante, la nariz es larga. Y las orejas son grandes.)</span>
+          <span class="analysis">象no es "sujeto". Es el establecimiento del tópico: "hablando del elefante..."</span>
+        </div>
+  
+        <h3>No "sujeto", sino "complemento nominativo"</h3>
+
+        <p>El nominal marcado con la posposición <strong>が (ga)</strong> es el <strong>complemento nominativo</strong>. Esto indica a qué se refiere el predicado. Es diferente del "sujeto" de las lenguas occidentales. También es diferente del elemento marcado con は, que indica "de qué se está hablando ahora".</p>
+
+        <div class="example">
+          <span class="jp">昨晩、<span class="hl-topic">雪が</span> 降ったようだ。</span>
+          <span class="gloss">Parece que anoche nevó. (lit. Parece que la nieve cayó anoche.)</span>
+          <span class="analysis">雪no es "sujeto". Es el "complemento nominativo" que indica a qué se refiere el verbo núcleo降った.</span>
+        </div>
+      </section>
+
+      <!-- 3. Composición del predicado -->
+      <section id="predicate">
+        <h2><span class="section-num">3</span> Composición del predicado</h2>
+
+        <p>El predicado se construye en torno al <strong>núcleo del predicado</strong>, al que se posponen según sea necesario las <strong>expresiones funcionales predicativas</strong>. Las <strong>expresiones funcionales predicativas</strong> no son obligatorias.</p>
+
+        <div class="structure-diagram">
+          <div class="structure-flow">
+            <span class="structure-item core">Núcleo del predicado</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item func">(Exp. funcional 1)</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item func">(Exp. funcional 2)</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item func">…</span>
+          </div>
+          <span class="structure-label">Al núcleo del predicado se posponen expresiones funcionales que indican negación, perfectivo, cortesía, etc.</span>
+        </div>
+
+        <h3>Orden de las expresiones funcionales predicativas</h3>
+
+        <p>Las expresiones funcionales predicativas siguen un orden determinado. Generalmente se posponen en el siguiente orden:</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Orden</th>
+                <th>Función</th>
+                <th>Expresión</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Voz (pasiva/causativa)</td>
+                <td>れる/られる, せる/させる</td>
+                <td>食べ<strong>させ</strong>る</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Negación</td>
+                <td>ない</td>
+                <td>食べさせ<strong>ない</strong></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Perfectivo/Pasado</td>
+                <td>た (だ)</td>
+                <td>食べさせなかっ<strong>た</strong></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Cortesía</td>
+                <td>ます / です</td>
+                <td>食べさせませんでし<strong>た</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="example">
+          <span class="jp">食べ<span class="hl-func">させ</span><span class="hl-func">られ</span><span class="hl-func">なかっ</span><span class="hl-func">た</span>。</span>
+          <span class="gloss">No me dejaron comer. / No pude comer (porque me lo impidieron).</span>
+          <span class="analysis">Núcleo食べ+ Causativoさせ+ Pasivoられ+ Negaciónなかっ+ Perfectivoた</span>
+        </div>
+      </section>
+
+      <!-- 4. Núcleo del predicado -->
+      <section id="core">
+        <h2><span class="section-num">4</span> Núcleo del predicado</h2>
+
+        <p>Las siguientes clases de palabras pueden funcionar como núcleo del predicado. Cada una tiene un patrón de flexión diferente.</p>
+
+        <div class="category-grid">
+          <div class="category-card verb">
+            <span class="card-label">Verbo (V)</span>
+            <h4>Expresa acción, cambio o existencia</h4>
+            <p>Se divide en 4 tipos:</p>
+            <ul>
+              <li><strong>Verbos V-ru</strong>: 食べる, 見る, 起きる</li>
+              <li><strong>Verbos V-u</strong>: 読む, 書く, 話す</li>
+              <li><strong>Verbo 来る</strong>: 来る (irregular)</li>
+              <li><strong>Verbo する</strong>: する, 勉強する</li>
+            </ul>
+          </div>
+
+          <div class="category-card adj">
+            <span class="card-label">Adjetivo (A)</span>
+            <h4>Expresa cualidad o estado</h4>
+            <p>Su forma declarativa termina en い.</p>
+            <ul>
+              <li>高い, 安い, おいしい</li>
+              <li>Negación: 高<strong>くない</strong></li>
+              <li>Pasado/Perfecto: 高<strong>かった</strong></li>
+            </ul>
+          </div>
+
+          <div class="category-card noun">
+            <span class="card-label">Nombre adjetival (Na)</span>
+            <h4>Elemento nominal que expresa cualidad o estado</h4>
+            <p>Se combina con el declarativo だ para formar el predicado.</p>
+            <ul>
+              <li>静か<strong>だ</strong>, 元気<strong>だ</strong></li>
+              <li>Negación: 静か<strong>ではない</strong></li>
+              <li>Pasado/Perfecto: 静か<strong>だった</strong></li>
+            </ul>
+          </div>
+
+          <div class="category-card noun">
+            <span class="card-label">Sustantivo (N)</span>
+            <h4>Expresa cosas o conceptos</h4>
+            <p>Se combina con el declarativo だ para formar el predicado.</p>
+            <ul>
+              <li>学生<strong>だ</strong>, 雨<strong>だ</strong></li>
+              <li>Negación: 学生<strong>ではない</strong></li>
+              <li>Pasado/Perfecto: 学生<strong>だった</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Sobre el declarativo だ</h3>
+
+        <div class="term-def">
+          <div class="term-name">Declarativo だ <span class="jp">(宣言詞 sengenshi)</span></div>
+          <div class="term-desc">Cuando un nominal (N) o nombre adjetival (Na) funciona como núcleo del predicado, se pospone だ para realizar una "declaración" de que "es ~".</div>
+          <ul>
+            <li><strong>Forma de origen</strong>: である (で = posposición que indica estado + ある = verbo existencial)</li>
+            <li><strong>Forma ordinaria</strong>: だ (contracción de である)</li>
+            <li><strong>Forma cortés</strong>: です (derivada de la forma cortés de である)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. Expresiones funcionales predicativas -->
+      <section id="functional">
+        <h2><span class="section-num">5</span> Expresiones funcionales predicativas</h2>
+
+        <p>Las expresiones funcionales predicativas son elementos que se posponen al núcleo del predicado para añadir significados gramaticales como negación, perfectivo, cortesía, voluntad, etc. Incluyen lo que tradicionalmente se llamaba "verbos auxiliares", pero su alcance es más amplio.</p>
+
+        <h3>Principales expresiones funcionales predicativas</h3>
+
+        <div class="term-def">
+          <div class="term-name">Adjetivo negativo ない</div>
+          <div class="term-desc">Expresa negación. Como es un adjetivo, se conjuga como tal (なくない, なかった).</div>
+        </div>
+
+        <div class="term-def">
+          <div class="term-name">Marcador de perfectivo た (だ)</div>
+          <div class="term-desc">Expresa perfectivo/pasado. Toma la forma た o だ según el entorno fonético.</div>
+        </div>
+
+        <div class="term-def">
+          <div class="term-name">Marcador de cortesía ます</div>
+          <div class="term-desc">Expresa cortesía. Indica respeto hacia el oyente. La forma negativa es ません.</div>
+        </div>
+
+        <div class="term-def">
+          <div class="term-name">Marcador volitivo う・よう</div>
+          <div class="term-desc">Expresa la voluntad del hablante o invitación.</div>
+        </div>
+
+        <div class="term-def">
+          <div class="term-name">Marcador condicional ば</div>
+          <div class="term-desc">Expresa condición hipotética. 〜すれば〜であれば.</div>
+        </div>
+
+      <section id="functional">
+        <h2><span class="section-num">6</span> Las 8 formas del núcleo del predicado</h2>
+
+        <p>El núcleo del predicado adopta 8 formas según la combinación de tres elementos: <strong>estilo (ordinario/cortés)</strong>, <strong>tiempo (no-pasado/pasado)</strong> y <strong>polaridad (afirmativo/negativo)</strong>.</p>
+
+        <div class="note important">
+          <div>
+            <strong>Nota importante sobre las traducciones al español</strong><br><br>
+            En las tablas siguientes, las traducciones al español utilizan la <strong>tercera persona del singular</strong> (él/ella) como sujeto. Sin embargo, es fundamental entender que esto es <strong>solo una convención</strong> para poder ofrecer una traducción.<br><br>
+            En japonés, el <strong>complemento nominativo</strong> (lo que otras gramáticas llaman "sujeto") <strong>no está presente en estas formas predicativas</strong>. El verbo japonés no indica por sí mismo quién realiza la acción: 食べるpuede significar "como", "comes", "come", "comemos", "coméis" o "comen", dependiendo enteramente del contexto.<br><br>
+            En la comunicación real, el complemento nominativo se determina por el <strong>contexto de la conversación</strong>. Cuando el contexto no lo aclara suficientemente, se añade de forma explícita. Las traducciones aquí presentadas son, por tanto, <strong>solo un ejemplo posible</strong> de entre muchas interpretaciones igualmente válidas.<br><br>
+            Esta característica representa una <strong>diferencia fundamental entre el japonés y el español</strong>: mientras que el español exige siempre un sujeto (ya sea explícito o implícito en la desinencia verbal), el japonés no lo requiere y la forma del predicado permanece invariable independientemente de quién realice la acción. Es precisamente por esta razón que resulta imposible traducir estas formas al español sin "inventar" un sujeto que en el original japonés simplemente no existe.
+          </div>
+        </div>
+
+        <h3>Verbo (V) 動詞</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="2">Estilo ordinario</th>
+                <th colspan="2">Estilo cortés</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>No pasado<br>/No perfecto</strong></td>
+                <td>
+                  食べる
+                  <span class="gloss-table">Come / Va a comer</span>
+                </td>
+                <td>
+                  食べない
+                  <span class="gloss-table">No come / No va a comer</span>
+                </td>
+                <td>
+                  食べます
+                  <span class="gloss-table">Come / Va a comer</span>
+                </td>
+                <td>
+                  食べません
+                  <span class="gloss-table">No come / No va a comer</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pasado<br>/Perfecto</strong></td>
+                <td>
+                  食べた
+                  <span class="gloss-table">Comió / Ha comido</span>
+                </td>
+                <td>
+                  食べなかった
+                  <span class="gloss-table">No comió / No ha comido</span>
+                </td>
+                <td>
+                  食べました
+                  <span class="gloss-table">Comió / Ha comido</span>
+                </td>
+                <td>
+                  食べませんでした
+                  <span class="gloss-table">No comió / No ha comido</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Adjetivo (A) 形容詞</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="2">Estilo ordinario</th>
+                <th colspan="2">Estilo cortés</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>No pasado<br>/No perfecto</strong></td>
+                <td>
+                  高い
+                  <span class="gloss-table">Es caro/alto</span>
+                </td>
+                <td>
+                  高くない
+                  <span class="gloss-table">No es caro/alto</span>
+                </td>
+                <td>
+                  高いです
+                  <span class="gloss-table">Es caro/alto</span>
+                </td>
+                <td>
+                  高くないです<br>
+                  <span style="color: var(--text-light);">高くありません</span>
+                  <span class="gloss-table">No es caro/alto</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pasado<br>/Perfecto</strong></td>
+                <td>
+                  高かった
+                  <span class="gloss-table">Era caro/alto</span>
+                </td>
+                <td>
+                  高くなかった
+                  <span class="gloss-table">No era caro/alto</span>
+                </td>
+                <td>
+                  高かったです
+                  <span class="gloss-table">Era caro/alto</span>
+                </td>
+                <td>
+                  高くありませんでした<br>
+                  <span style="color: var(--text-light);">高くなかったです</span>
+                  <span class="gloss-table">No era caro/alto</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Nominal adjetival (Na) 形容名詞</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="2">Estilo ordinario</th>
+                <th colspan="2">Estilo cortés</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>No pasado<br>/No perfecto</strong></td>
+                <td>
+                  元気だ
+                  <span class="gloss-table">Está bien / Está animado</span>
+                </td>
+                <td>
+                  元気ではない<br>
+                  <span style="color: var(--text-light);">（元気じゃない）</span>
+                  <span class="gloss-table">No está bien / No está animado</span>
+                </td>
+                <td>
+                  元気です
+                  <span class="gloss-table">Está bien / Está animado</span>
+                </td>
+                <td>
+                  元気ではありません<br>
+                  <span style="color: var(--text-light);">（元気じゃありません）</span><br>
+                  <span style="color: var(--text-light);">元気ではないです</span><br>
+                  <span style="color: var(--text-light);">（元気じゃないです）</span>
+                  <span class="gloss-table">No está bien / No está animado</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pasado<br>/Perfecto</strong></td>
+                <td>
+                  元気だった
+                  <span class="gloss-table">Estaba bien / Estuvo animado</span>
+                </td>
+                <td>
+                  元気ではなかった<br>
+                  <span style="color: var(--text-light);">（元気じゃなかった）</span>
+                  <span class="gloss-table">No estaba bien / No estuvo animado</span>
+                </td>
+                <td>
+                  元気でした
+                  <span class="gloss-table">Estaba bien / Estuvo animado</span>
+                </td>
+                <td>
+                  元気ではありませんでした<br>
+                  <span style="color: var(--text-light);">（元気じゃありませんでした）</span><br>
+                  <span style="color: var(--text-light);">元気ではなかったです</span><br>
+                  <span style="color: var(--text-light);">（元気じゃなかったです）</span>
+                  <span class="gloss-table">No estaba bien / No estuvo animado</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Nominal (N) 名詞</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="2">Estilo ordinario</th>
+                <th colspan="2">Estilo cortés</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+                <th>Afirmativo</th>
+                <th>Negativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>No pasado<br>/No perfecto</strong></td>
+                <td>
+                  学生だ
+                  <span class="gloss-table">Es estudiante</span>
+                </td>
+                <td>
+                  学生ではない<br>
+                  <span style="color: var(--text-light);">（学生じゃない）</span>
+                  <span class="gloss-table">No es estudiante</span>
+                </td>
+                <td>
+                  学生です
+                  <span class="gloss-table">Es estudiante</span>
+                </td>
+                <td>
+                  学生ではありません<br>
+                  <span style="color: var(--text-light);">（学生じゃありません）</span><br>
+                  <span style="color: var(--text-light);">学生ではないです</span><br>
+                  <span style="color: var(--text-light);">（学生じゃないです）</span>
+                  <span class="gloss-table">No es estudiante</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pasado<br>/Perfecto</strong></td>
+                <td>
+                  学生だった
+                  <span class="gloss-table">Era estudiante</span>
+                </td>
+                <td>
+                  学生ではなかった<br>
+                  <span style="color: var(--text-light);">（学生じゃなかった）</span>
+                  <span class="gloss-table">No era estudiante</span>
+                </td>
+                <td>
+                  学生でした
+                  <span class="gloss-table">Era estudiante</span>
+                </td>
+                <td>
+                  学生ではありませんでした<br>
+                  <span style="color: var(--text-light);">（学生じゃありませんでした）</span><br>
+                  <span style="color: var(--text-light);">学生ではなかったです</span><br>
+                  <span style="color: var(--text-light);">（学生じゃなかったです）</span>
+                  <span class="gloss-table">No era estudiante</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note important">
+          <div>
+            <strong>じゃ es la forma contraída de では</strong><br><br>
+            En japonés, la combinación de dos posiciones <strong>では</strong> (se pronuncia como "deua" en español) a menudo se pronuncia como <strong>じゃ</strong> (se pronuncia como "lla" en español) en el habla real. Esto no es simplemente una forma “informal” o “descuidada”, sino una variante fonética normal muy extendida. Desde el punto de vista gramatical, <strong>では</strong> y <strong>じゃ</strong> cumplen la misma función.<br><br>
+            Lo importante es que <strong>じゃ</strong> no es exclusivo del estilo coloquial. También aparece con mucha frecuencia en registros educados y formales. Así, <strong>では</strong> y <strong>じゃ</strong> no forman una oposición de “formal vs. informal”, sino de forma normal vs. forma contraída, ambas compatibles con el lenguaje educado. que en el original japonés simplemente no existe.
+          </div>
+        </div>
+ 
+         <div class="note important">
+          <div>
+            <strong>では（じゃ）ありません vs. では（じゃ）ないです</strong><br><br>
+            Aunque ambas expresiones significan lo mismo ("no es"), se diferencian por su origen gramatical y su matiz:<br><br>
+            <strong>では（じゃ）ありません</strong> es la forma negativa formal estándar y tradicional. Se construye usando el negativo del verbo <strong>ある</strong> (existir, estar), que es <strong>ありません</strong> (no existir, no estar). Es la opción más común en libros de texto, discursos oficiales, documentos escritos y situaciones de negocios muy formales, ya que proyecta un tono de seriedad, cortesía y cierta distancia.<br><br>
+            Por otro lado, <strong>では（じゃ）ないです</strong> es una forma más moderna y conversacional. Se crea añadiendo el auxiliar de cortesía desu a la forma negativa informal <strong>ない (adjetivo negativo). Aunque sigue siendo educada, suena más suave, cercana y natural en el habla cotidiana actual. En resumen: usa la primera para sonar impecable y formal, y la segunda para sonar amable y fluido en el día a día.
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 7. Modificación nominal -->
+      <section id="modification">
+        <h2><span class="section-num">7</span> Modificación nominal</h2>
+
+        <p>En japonés, <strong>una oración puede colocarse directamente delante de un nominal</strong> para modificarlo. No existen pronombres relativos como en las lenguas occidentales.</p>
+
+        <div class="principle-box">
+          <h3>Principio básico de la modificación nominal</h3>
+          <p><strong>[Oración] + Sustantivo</strong></p>
+          <p>La oración se antepone directamente al nominal y lo modifica. Salvo en casos de habla muy formal, el predicado dentro de la cláusula modificadora suele estar en <strong>estilo ordinario</strong>.</p>
+        </div>
+
+        <div class="example">
+          <span class="jp">[昨日 買った] 本</span>
+          <span class="gloss">el libro que compró ayer</span>
+          <span class="analysis">La oración昨日買った(compró ayer) modifica a本(libro)</span>
+        </div>
+
+        <div class="example">
+          <span class="jp">[日本語が 分かる] 人</span>
+          <span class="gloss">persona que entiende japonés</span>
+          <span class="analysis">La oración日本語が分かる(entiende japonés) modifica a人(persona)</span>
+        </div>
+
+        <div class="example">
+          <span class="jp">[明日、京都に行く] こと</span>
+          <span class="gloss">el hecho de que vaya a Kioto mañana</span>
+          <span class="analysis">La oración明日、京都に行く(va a Kioto mañana) modifica aこと(hecho)</span>
+        </div>
+
+        <h3>¿Por qué el estilo ordinario debe ser la base en el aprendizaje del japonés?</h3>
+
+        <p>En las cláusulas modificadoras nominales, el uso del <strong>estilo cortés (ます・です)</strong> es muy limitado. Lo mismo ocurre en las cláusulas subordinadas. Por lo tanto, <strong>si no se domina primero el estilo ordinario, no se puede realizar la modificación nominal</strong>. Sin poder usar la modificación nominal ni las oraciones subordinadas, no es posible construir oraciones complejas.</p>
+
+        <div class="note important">
+          <div>En la enseñanza tradicional del japonés, que enseña primero solo el estilo cortés, los estudiantes quedan atrapados durante largo tiempo en la incapacidad de crear más que oraciones simples. Al establecer el estilo ordinario como la forma básica de la gramática, se hace posible el aprendizaje temprano de oraciones complejas que incluyen modificación nominal.</div>
+        </div>
+      </section>
+
+      <!-- 8. Oraciones con のだ -->
+      <section id="noda">
+        <h2><span class="section-num">8</span> Estructura de las oraciones con のだ</h2>
+
+        <p>Las oraciones con のだ (んだ) frecuentemente se explican con funciones como "explicación" o "énfasis", pero en este sistema las entendemos de manera unificada <strong>desde la perspectiva de la modificación nominal</strong>.</p>
+
+        <div class="principle-box">
+          <h3>Estructura de のだ</h3>
+          <p><strong>[Oración] + の + だ</strong></p>
+          <p>の es un nominal formal (nominal sin significado léxico sustancial), y la oración anterior modifica a este の. Después se añade el declarativo だ.</p>
+        </div>
+
+        <div class="structure-diagram">
+          <div class="structure-flow">
+            <span class="structure-item optional">[ Oración ]</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item core">の</span>
+            <span class="structure-arrow">→</span>
+            <span class="structure-item func">だ</span>
+          </div>
+          <span class="structure-label">La "oración" modifica al nominal formal の, que luego se declara con だ</span>
+        </div>
+
+        <div class="example">
+          <span class="jp">明日 東京に 行く<span class="hl-core">ん</span><span class="hl-func">ですか</span>。</span>
+          <span class="gloss">¿Es que mañana usted va a Tokio?</span>
+          <span class="analysis">明日東京に行く→ modifica a una frase nominal con ん(forma coloquial de の)→ se declara conです→　se convierte en una interrogación con か] </span>
+        </div>
+
+        <h3>Funciones de のだ</h3>
+
+        <p>のだ recibe el contenido de la oración precedente con el nominal formal の y lo declara con だ, produciendo los siguientes efectos:</p>
+
+          <div class="note">
+          <ul>
+          <li><strong>Explicación</strong>: Explica el trasfondo o la razón de una situación ("en realidad es que ~")</li>
+          <li><strong>Descubrimiento</strong>: Expresa un hecho recién descubierto ("resulta que era ~")</li>
+          <li><strong>Confirmación</strong>: Pide confirmación al interlocutor ("¿es que ~?")</li>
+          <li><strong>Afirmación</strong>: Clarifica la posición propia ("es que ~")</li>
+        </ul>
+        </div>
+        <div class="example">
+          <span class="jp">A: どうして 遅刻したの？<br>B: 電車が 遅れた<span class="hl-core">ん</span><span class="hl-func">だ</span>。</span>
+          <span class="gloss">A: ¿Por qué llegaste tarde? B: Es que el tren se retrasó.</span>
+          <span class="analysis">Se usa のだ (んだ) para explicar la razón</span>
+        </div>
+
+        <div class="note">
+          <div>En el habla coloquial, のだ → んだ y のです → んです. Esto es por la nasalización de の.</div>
+        </div>
+      </section>
+
+      <!-- 9. Expresiones finales -->
+      <section id="final">
+        <h2><span class="section-num">9</span> Expresiones finales de oración</h2>
+
+        <p>Las expresiones finales de oración son elementos que se añaden al final de la oración e indican <strong>con qué intención el hablante presenta esa oración al interlocutor</strong>. En la gramática tradicional se llamaban "partículas finales", pero en este sistema las llamamos "expresiones finales de oración".</p>
+
+        <div class="principle-box">
+          <h3>Función de las expresiones finales</h3>
+          <p>Las expresiones finales no afectan el contenido proposicional (significado de la oración), sino que indican la <strong>relación entre hablante y oyente</strong> y la <strong>actitud del hablante</strong>. Juegan un papel especialmente importante en la expresión oral.</p>
+        </div>
+
+        <h3>Principales expresiones finales</h3>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Expresión</th>
+                <th>Función</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>よ</strong></td>
+                <td>Proporcionar información / afirmar (transmitir información que el oyente desconoce)</td>
+                <td>
+                  明日は休みだ<strong>よ</strong>。
+                  <span class="gloss-table">Mañana es día libre (te informo).</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>ね</strong></td>
+                <td>Confirmación / buscar acuerdo (buscar compartir con el interlocutor)</td>
+                <td>
+                  今日は暑い<strong>ね</strong>。
+                  <span class="gloss-table">Hoy hace calor, ¿verdad?</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>よね</strong></td>
+                <td>Confirmación (confirmar si la propia percepción es correcta)</td>
+                <td>
+                  明日は会議だ<strong>よね</strong>？
+                  <span class="gloss-table">Mañana hay reunión, ¿no es así?</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>か</strong></td>
+                <td>Interrogación (indicar pregunta)</td>
+                <td>
+                  誰です<strong>か</strong>？
+                  <span class="gloss-table">¿Quién es?</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>↗ (entonación ascendente)</strong></td>
+                <td>Interrogación (indicar pregunta)</td>
+                <td>
+                  誰<strong>↗</strong>？
+                  <span class="gloss-table">¿Quién (es)?</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>な(ぁ)</strong></td>
+                <td>Exclamación (expresar las propias emociones)</td>
+                <td>
+                  きれいだ<strong>なぁ</strong>。
+                  <span class="gloss-table">¡Qué bonito/a es!</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>かな</strong></td>
+                <td>conjetura en voz alta</td>
+                <td>
+                  行こう<strong>かな</strong>。
+                  <span class="gloss-table">Me pregunto si irá... / ¿Irá?</span>
+                </td>
+              </tr>
+           </tbody>
+          </table>
+        </div>
+        
+        <div class="example">
+          <span class="jp">田中さん、来る<span class="hl-final">よ</span>。</span>
+          <span class="gloss">Tanaka-san viene. (Te informo.)</span>
+          <span class="analysis">Con よ se indica la intención de "transmitir información que no conoces"</span>
+        </div>
+
+        <div class="example">
+          <span class="jp">田中さん、来る<span class="hl-final">よね</span>。</span>
+          <span class="gloss">Tanaka-san viene, ¿verdad?</span>
+          <span class="analysis">Con よね se indica la confirmación de "tú también estás de acuerdo, ¿verdad?"</span>
+        </div>
+
+        <div class="note">
+          <div>Si no se usan adecuadamente las expresiones finales, el japonés suena "frío" o "mecánico". Especialmente en la comunicación oral, dominar las expresiones finales es la clave para un uso natural del japonés.</div>
+        </div>
+      </section>
+
+      <!-- 10. Complementos y posposiciones -->
+      <section id="complement">
+        <h2><span class="section-num">10</span> Complementos y posposiciones</h2>
+
+        <p>Los <strong>complementos</strong> son elementos que completan el significado del predicado. Los <strong>complementos</strong> se marcan con <strong>posposiciones</strong> (llamadas "partículas" en la gramática tradicional), que indican su función gramatical.</p>
+
+        <h3>Principales posposiciones que indican la función de los complementos</h3>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Posposición</th>
+                <th>Función</th>
+                <th>Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>が</strong></td>
+                <td>Indica a qué se refiere el predicado (no es "sujeto")</td>
+                <td>
+                  猫<strong>が</strong>いる。/ 富士山<strong>が</strong>見える。
+                  <span class="gloss-table">Hay un gato. / Se ve el monte Fuji.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>を</strong></td>
+                <td>Indica el objeto afectado por la acción</td>
+                <td>
+                  本<strong>を</strong>読む。/ 公園<strong>を</strong>散歩する。
+                  <span class="gloss-table">Lee un libro. / Pasea por el parque.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>に</strong></td>
+                <td>Indica las condiciones ambientales de acción, estado o existencia</td>
+                <td>
+                  マンション<strong>に</strong>住む。/ 7時<strong>に</strong>起きる。/ 大雪<strong>に</strong>なる。
+                  <span class="gloss-table">Vive en un apartamento. / Se levanta a las 7. / Se convierte en una gran nevada.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>で</strong></td>
+                <td>Indica el medio de la acción / lugar donde ocurre la acción</td>
+                <td>
+                  電車<strong>で</strong>行く。/ 公園<strong>で</strong>遊ぶ。
+                  <span class="gloss-table">Va en tren. / Juega en el parque.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>へ</strong></td>
+                <td>Indica dirección</td>
+                <td>
+                  北<strong>へ</strong>向かう。
+                  <span class="gloss-table">Se dirige hacia el norte.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>から</strong></td>
+                <td>Indica punto de origen</td>
+                <td>
+                  東京<strong>から</strong>来た。/ 明日<strong>から</strong>夏休みだ。
+                  <span class="gloss-table">Vino de Tokio. / Desde mañana son las vacaciones de verano.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>まで</strong></td>
+                <td>Indica punto de llegada</td>
+                <td>
+                  大阪<strong>まで</strong>行く。/ 夜遅く<strong>まで</strong>起きている。
+                  <span class="gloss-table">Va hasta Osaka. / Está despierto/a hasta tarde en la noche.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>と</strong></td>
+                <td>Indica persona o cosa involucrada</td>
+                <td>
+                  友達<strong>と</strong>行く。/ 恋人<strong>と</strong>別れる。/ 酢<strong>と</strong>混ぜる。
+                  <span class="gloss-table">Va con un amigo. / Se separa de su pareja. / Lo mezcla con vinagre.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>La posposición は que enfoca el tópico o el objeto de comparación</h3>
+
+        <p><strong>は</strong> ocupa una posición especial entre las posposiciones. <strong>は</strong> tiene la función de tomar un objeto, enfocarlo como el tópico sobre el cual habla la oración, o separarlo de otros para enfocarlo y establecer contraste.</p>
+
+        <div class="example">
+          <span class="jp"><span class="hl-topic">あの猫は</span> 隣の家で飼っている猫だ。</span>
+          <span class="gloss">Ese gato es el que tienen los vecinos. (lit. Ese gato es el que tienen en la casa de al lado.)</span>
+          <span class="analysis">あの猫no es "sujeto". Es la marca del "tópico" que pone el foco enあの猫y comunica información sobre él.</span>
+        </div>
+       
+        <div class="example">         
+          <span class="jp"><span class="hl-topic">犬は</span> 好きだけど、<span class="hl-topic">猫は</span>嫌いだ。</span>
+          <span class="gloss">Me gustan los perros, pero no me gustan los gatos. (lit. Los perros son (para mí) agradables, pero los gatos son desagradables.)</span>
+          <span class="analysis">Tanto犬como猫son "complementos nominativos" de los predicados好きだy嫌いだ, pero aquí la posposición は enfoca y contrasta cada uno de ellos. Es un ejemplo de la función de enfoque de la posposición は.</span>
+       </div>
+      </section>
+
+      <!-- Resumen -->
+      <section id="summary">
+        <h2><span class="section-num">∞</span> Resumen del sistema</h2>
+
+        <div class="structure-diagram">
+          <div class="structure-flow" style="flex-direction: column; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+              <span class="structure-item optional">(Tópico + は)</span>
+              <span class="structure-arrow">→</span>
+              <span class="structure-item optional">(Complemento + posposición) ...</span>
+              <span class="structure-arrow">→</span>
+              <span class="structure-item core">Núcleo del predicado</span>
+              <span class="structure-arrow">→</span>
+              <span class="structure-item func">(Expresión funcional) ...</span>
+              <span class="structure-arrow">→</span>
+              <span class="structure-item final">(Expresión final) ...</span>
+              <br><br>
+              <span class="structure-label">Los elementos entre ( ) son omisibles. Solo el predicado es obligatorio.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="principle-box">
+          <h3>Puntos clave de este sistema gramatical</h3>
+          <ol>
+            <li><strong>Centrado en el predicado</strong>: El elemento esencial de la oración es el predicado. El "sujeto" no es obligatorio.</li>
+            <li><strong>Núcleo + Expresiones funcionales</strong>: El predicado se construye añadiendo "expresiones funcionales" al "núcleo".</li>
+            <li><strong>El estilo ordinario es básico</strong>: Es indispensable para la modificación nominal y la construcción de oraciones complejas, y debe aprenderse antes que el estilo cortés.</li>
+            <li><strong>Modificación nominal = Oración + Sustantivo</strong>: Sin pronombres relativos, la oración modifica directamente al nominal.</li>
+            <li><strong>のだ es modificación nominal</strong>: Se entiende como una estructura en la que la oración modifica al nominal formal の.</li>
+            <li><strong>Las expresiones finales indican la intención</strong>: La intención comunicativa del hablante se expresa con expresiones finales.</li>
+            <li><strong>Las posposiciones marcan las relaciones gramaticales</strong>: La función de los complementos se indica mediante posposiciones.</li>
+            <li><strong>También se usan adverbios, frases adverbiales y conjunciones</strong>: La función de estas palabras es similar a otras lenguas. (Se tratan por separado en otro lugar.)</li>
+         </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Nueva gramática del japonés | 日本語文法の新体系</p>
+      <p>(c) nihongo / japonés para todos</p>
+    </footer>
+  </div>
+
+  <script>
+    // Collapsible functionality
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.parentElement.classList.toggle('open');
+      });
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
